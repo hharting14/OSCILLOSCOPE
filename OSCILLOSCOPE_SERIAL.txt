@@ -166,7 +166,8 @@ classdef OSCILLOSCOPE_SERIAL < matlab.apps.AppBase
                         % Update screen according to Vs 
                         app.b = toc(app.a);
                         if app.b > (1/app.Vs)       % Screen update speed
-                            drawnow                 % Update every 1/Vs secs                                 app.a = tic;          % Resetea timer luego de update
+                            drawnow                 % Update every 1/Vs secs                         
+                            app.a = tic;            % Resets timer after update
                         end
                        
                         % When reaches final edge of display, reset counter and flush the buffer                 
